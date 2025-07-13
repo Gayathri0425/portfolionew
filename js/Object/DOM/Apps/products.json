@@ -1,0 +1,38 @@
+{
+    "arrayOfproducts":[{"id":1,"title":"Microsoft Xbox X/S Wireless Controller Robot White",
+    "imgURL":"https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692255251854-xbox.jpg",
+  "  price":1000,"brand":"Microsoft","category":"Gaming","qty":1},{"id":2,"title":"Sony WH-1000XM3 Bluetooth Wireless Over Ear Headphones with Mic (Silver)",
+    "imgURL":"https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692947383286-714WUJlhbLS._SL1500_.jpg",
+    "price":2000,"brand":"sony","category":"audio","qty":1},{"id":3,"title":"Logitech G733 Lightspeed Wireless Gaming Headset with Suspension Headband, LIGHTSYNC RGB, Blue VO!CE mic Technology and PRO-G Audio Drivers - White",
+    "imgURL":"https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692257709689-logitech heaphone.jpg",
+   " price":3000,"brand":"logitech G","category":"Gaming","qty":1},{"id":4,"title":"Urbanista Los Angeles Sand Gold - World’s 1st Solar Powered Hybrid Active Noise Cancelling with Mic Premium Wireless Headphones, Unlimited Playtime",
+    "imgURL":"https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1691056487173-headphon2.jpg",
+   " price":4000,"brand":"Los Angeles","category":"audio","qty":1}]
+}
+
+// Make server call using AJAX
+
+function fetchData() 
+{
+    // 1. Create an object
+    let xhr = new XMLHttpRequest();
+
+    // 2. Create a request
+
+    xhr.open("GET",'./products.js',true);
+
+    // 3. Send the request
+    xhr.send();
+
+    // 4. When request is sent to server, it takes some time to load the data
+    xhr.addEventListener("progress", function () {
+        // window.alert("Data is loading");
+        console.log("Data is loading...");
+    });
+
+    // 5. Once the data is loaded
+    xhr.addEventListener("load", function () {
+        let getData = JSON.parse(xhr.responseText);
+        console.log(getData);
+    });
+}

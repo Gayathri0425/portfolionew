@@ -1,0 +1,59 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body
+{
+    color:#ededed;
+}
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+.logo
+{
+    position:relative;
+    font-size: 25px;
+    color: #fff;
+    text-decoration:none ;
+    font-weight: 600;
+}
+.navbar a
+{
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+.navbar a:hover
+{
+    color: aqua;
+}
+.home
+{
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100%;
+    background: url(https://s3-alpha.figma.com/hub/file/2532085184/a2c4d747-4bfc-4bbd-9735-bf880b4573b4-cover.png);
+    background-size: cover;
+    background-position: center;
+
+}
+

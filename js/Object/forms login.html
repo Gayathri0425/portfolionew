@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../../bt/css/bootstrap.css">
+
+    <style>
+        .navbar
+        {
+            background: linear-gradient(45deg,rgb(105, 112, 115),rgb(122, 198, 228),rgb(17, 157, 213));
+        }
+        .hidden
+        {
+            display: none;
+        }
+       
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a href="#"class="navbar-brand">🛒jcart</a>
+            <button  class="btn btn-light" id="show-btn">show</button>
+        </div>
+    </nav>
+    <section class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-4 m-auto  hidden"  id="form-layout">
+                <div class="card-header text-center text-white bg-info">
+                    <h2>login here</h2>
+                </div>
+                <div class="card-body">
+                    <form id="login-form">
+                        <div>
+                            <input type="text" placeholder="enter email usn" class="form-control" value="" id="usn-box">
+                        </div>
+                        <div class="mt-2">
+                            <input type="password" placeholder="enter password" class="form-control" value="" id="pw-box">
+                        </div>
+                        <div class="mt-3">
+                            <input type="submit" class="btn btn-info">
+                              <button class="btn btn-info" id="close-btn">close</button>
+                        </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let loginform=document.getElementById('login-form');
+        let usernamebox=document.getElementById('usn-box');
+        let passwordbox=document.getElementById('pw-box');
+        let showbtn=document.getElementById('show-btn');
+        let formlayout=document.getElementById('form-layout');
+        let closebtn=document.getElementById('close-btn');
+
+
+           
+
+    loginform.addEventListener('submit',function(e)
+    {
+       let enteredusn=usernamebox.value;
+       let enteredpw=passwordbox.value;
+
+       let newuser={};
+       newuser.usn=enteredusn;
+       newuser.pw=enteredpw;
+
+       console.log(newuser);
+
+       usernamebox.value="";
+       passwordbox.value="";
+    })
+   showbtn.addEventListener('click', function() {
+            showbtn.classList.add('hidden');
+            formlayout.classList.remove('hidden');
+        });
+
+    closebtn.addEventListener('click', function() {
+        formlayout.classList.add('hidden');
+        showbtn.classList.remove('hidden');
+         });
+    document.addEventListener('keyup',function(event)
+    {
+         if (event.key === "Escape" && !formlayout.classList.contains('hidden'))
+     {
+        alert('work');
+         formlayout.classList.add('hidden');
+     }
+    })
+
+
+
+
+   
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="one">Header one</h1>
+        <div>
+            <h2>List of courses</h2>
+            <ol>
+                <li>HTML</li>
+                <li class="cc">CSS</li>
+                <li class="cc">REACT</li>
+                <li>VUE JS</li>
+            </ol>
+        </div>
+    <script>
+        let h1Tag=document.getElementById('one');
+        console.log(h1Tag);
+        let coll=document.getElementsByTagName('li'); 
+        console.log(coll);
+         coll=document.getElementsByClassName('cc');
+        console.log(coll);
+        let h2Tag=document.querySelector('div>h2');
+        console.log(h2Tag);
+        let h1Tagg=document.querySelector('#one');
+        console.log(h1Tagg);
+         let liTag=document.querySelector('li'); 
+        console.log(liTag);
+    </script>
+    </body>
+</html>

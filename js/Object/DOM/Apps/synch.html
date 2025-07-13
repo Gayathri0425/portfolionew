@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./../../../../bt/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        .navbar
+        {
+            background: linear-gradient(45deg,rgb(105, 112, 115),rgb(122, 198, 228),rgb(17, 157, 213));
+        } 
+       
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark text-white">
+        <h1 class="navbar-brand">🛒jcart</h1>
+        <div>
+             <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" id="search-box">
+             </form>
+        </div>
+        <div>
+        <button  class="btn btn-light"id="audio-btn " onclick="audioproducts()">Audio🎵</button>
+        <button class="btn btn-light"id="audio-btn " onclick="gamingproducts()">Gaming🎮</button>
+        </div>
+
+        
+
+    </nav>
+    <section class="container-fluid mt-2 animate__animated animate__flipInX">
+        <div class="row"id="data-ele">
+        </div>
+    </section>
+    <div class="container ">
+        <h3 class="text-center mt-4"id="grand-total"></h3>
+    </div>
+    <footer style="margin-bottom: 500px;"></footer>
+    <script src="./products.js"></script>
+</body>
+</html>

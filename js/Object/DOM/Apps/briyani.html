@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>RCB briyani</title>
+         <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        
+        <style>
+            *
+            {
+                margin: 0px;
+            }
+            nav
+            {
+                background: linear-gradient(45deg,rgb(221,242,219),limegreen);
+
+            }
+           #card-section
+            {
+               margin-top: 20px;
+            }
+            .card
+            {
+                box-shadow:0 0 5px rgb(136, 240, 123) ;
+                margin: 30px;
+                width: 240px;
+                height: 180px;
+                border-radius: 20px 20px 0px 0px;
+
+            }
+            .card>img
+            {
+                width:inherit;
+                height:inherit;
+                border-radius: inherit;
+
+            }
+            .card-data
+            {
+                margin-top: 8px;
+                text-align: center;
+
+            }
+            .bi
+            {
+                color: white;
+                border-radius: 100%;
+            }
+            .bi:hover
+            {
+                cursor: pointer;
+            }
+            #minus
+            {
+                color: red;
+            }
+            #plus
+            {
+                color: green;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <nav>
+            <h1>🐤main's Briyani🐤</h1>
+        </nav>
+            <section id="card-selection">
+                <div class="card-parent">
+                    <div class="card">
+                            <img src="https://tse2.mm.bing.net/th?id=OIP.FPuP3QNkURKQqGMi9VkeZQHaE8&pid=Api&P=0&h=180"alt="">
+                            <div class="card-data">
+                                <h2>mani's Dum Briyani</h2>
+                                 <p>This briyani comes with 2 pics of chicken ,raita,gravy.</p>
+                                 <h4 style ="color: red;">oder now</h4>
+                                  <h3>&#8377 400.00</h3>
+                                <h2 style="margin-top: 10px;">
+                                   <i class="bi bi-dash-circle-fill" id="minus"onclick="decqty()"></i>
+                                    <span id="qty-ele"></span>
+                                    <i class="bi bi-plus-circle-fill" id="plus"onclick="incqty()"></i>
+                                    
+                                </h2>
+                            </div>      
+                     </div>
+                </div>
+            </section>
+<footer style="margin-bottom: 500px;"></footer>
+<script>
+    let qtyEle=document.getElementById('qty-ele');
+    let qty=1;
+    qtyEle.textContent=qty;
+
+    function incqty()
+    {
+        qty++;
+        qtyEle.textContent=qty;
+    }
+    function decqty()
+    {
+        if(qty>1)
+        {
+            qty--;
+            qtyEle.textContent=qty; 
+        }
+        else  qtyEle.textContent=qty; 
+    }
+</script>
+</body>
+</html>

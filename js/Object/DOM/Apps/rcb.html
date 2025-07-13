@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./../../bt/bootstrap/css/bootstrap.css">
+    <style>
+        img
+        {
+            height: 200px;
+            width: inherit;
+            background: linear-gradient(45deg,rgb(80, 29, 29),rgb(143, 22, 22),rgb(189, 31, 31));
+        }
+        .bg-danger
+        {
+            background: linear-gradient(45deg,rgb(80, 29, 29),rgb(143, 22, 22),rgb(189, 31, 31));
+        }
+        .card-footer
+        {
+            background: linear-gradient(45deg,rgb(80, 29, 29),rgb(137, 28, 28),rgb(189, 31, 31));
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-danger">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">🏆R C B🏆</a>
+        </div>
+    </nav>
+    <section class="container-fluid">
+        <div class="row">
+            <div class=col-3>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="https://www.livemint.com/lm-img/img/2025/03/28/original/RCB_1743129770003.jpg"class="image-fluid">
+
+                    </div>
+                    <div class="card-body text-center">
+                        
+                        <h3>Virat Kohli</h3>
+                        <h3>18</h3>
+                    <h2 style="margin-top: 10px;">
+                        <button class="bi bi-hand-thumbs-up-fill text-success"onclick="like()"><span id=likecount>1</span></button>
+                        <button class="bi bi-hand-thumbs-down-fill text-danger"onclick="dislike()"><span id=dislikecount>1</span></button>
+                    </h2>
+                    </div>
+                    <div class="card-footer text-center">
+                        <h2>Likes & Dislikes:<span id=totalcount>2</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+    let Likecount=localStorage.getItem('Likes')?parseInt(localStorage.getItem('Likes')):0;
+    let Dislikecount=localStorage.getItem('Dislikes')?parseInt(localStorage.getItem('Dislikes')):0;
+
+             let Likes=document.getElementById('likecount');
+             let Dislikes=document.getElementById('dislikecount');
+             let totalcount=document.getElementById('totalcount');
+               function update()
+               {
+                Likes.textContent=Likecount;
+                Dislikes.textContent=Dislikecount;
+                totalcount.textContent=Likecount + Dislikecount;
+               }
+             function like()
+             {
+                Likecount++;
+                update();
+             }
+             function dislike()
+             {
+                Dislikecount++;
+                update();
+             }
+                update();
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaJam Coffee House</title>
+    <link rel="stylesheet" href="./../CSS/Javajam.css">
+    <style>
+        *
+{
+    margin: 0px;
+}
+.container
+{
+    border: 0px solid black;
+    width: 800px;
+    height: 400px;
+    margin: 40px auto;
+    background-color: rgb(253, 244, 193);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-container
+{
+    border: 0px solid rgba(8, 8, 9, 0.99);
+    width: 780px;
+    height: 380px;
+    box-shadow: 0px 0px 5px lightgreen;
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-rows: 100px auto 40px;
+}
+.items
+{
+    border: 0px solid black;
+}
+.one
+{
+    grid-column: 1/2;
+    grid-row: 1/3;
+    background-color: rgb(37, 23, 22);
+    color: rgb(207, 180, 137);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 10px;
+}
+.one>img
+{
+    width: 150px;
+}
+.two
+{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: rgb(207, 180, 137);
+    color:  rgb(37, 23, 22);
+    display: flex;
+    align-items: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    padding-left: 30px;
+}
+.three
+{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: rgb(252, 245, 193);
+}
+.three>h1
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: rgb(37, 23, 22);
+    padding: 10px 0px 0px 50px;
+}
+.three>h2
+{
+    font-family:cursive;
+    font-size: 12px;
+    padding: 10px 0px 0px 30px;
+    margin-bottom: 15px;
+}
+.three>label
+{
+    font-size: 10px;
+    padding-left: 30px;
+    font-style: oblique;
+}
+.three>input
+{
+    width: 110px;
+    height: 10px;
+    margin-top: 10px;
+}
+.three>textarea
+{
+    margin-top: 10px;
+}
+.three>button
+{
+    color: blue;
+    border-radius: 3px;
+    margin-left: 90px;
+    font-size: 10px;
+}
+.four
+{
+    grid-column: 1/3;
+    grid-row: 3/4;
+    background-color: rgb(206, 180, 138);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 10px;
+}
+.four>h1
+{
+    font-size: 7px;
+}
+.four>h2
+{
+    font-size: 7px;
+    color: blue;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <div class="items one">
+                <img src="./../images/javajam.jpg" alt="">
+                <h1>Home</h1>
+                <h1>Menu</h1>
+                <h1>Music</h1>
+                <h1>Jobs</h1>
+            </div>
+            <div class="items two">
+                <h1>JavaJam Coffee House</h1>
+            </div>
+            <div class="items three">
+                <h1>Jobs at JavaJam</h1>
+                <h2>Willing to work at JavaJam? Fill out the form bellow to start your application <br> Required fields are marked with an astric(*)</h2>
+                <label for="">* Name <span style="padding-left: 20px;">:</span></label>
+                <input type="text"> <br>
+                <label for="">* E-mail <span style="padding-left: 17px;">:</span></label>
+                <input type="text">  <br>
+                <label for="">* Experience :</label>
+                <textarea name="" id=""></textarea>  <br> <br>
+                <button>Apply Now</button>
+            </div>
+            <div class="items four">
+                <h1>Copyright &copy; 2016 JavaJam Coffee House</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
