@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Reminder App</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        background: #f5f5f5;
+    }
+    h1 {
+        color: #333;
+    }
+    .reminder-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        margin-top: 20px;
+    }
+    select, button {
+        padding: 8px;
+        margin: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    button {
+        background: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #45a049;
+    }
+    .list {
+        margin-top: 20px;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+
+<h1>Daily Reminder App</h1>
+
+<div class="reminder-box">
+    <label>Day of the Week:</label>
+    <select id="daySelect">
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>Saturday</option>
+        <option>Sunday</option>
+    </select>
+    <br>
+
+    <label>Time:</label>
+    <input type="time" id="timeSelect">
+    <br>
+
+    <label>Activity:</label>
+    <select id="activitySelect">
+        <option>Wake up</option>
+        <option>Go to gym</option>
+        <option>Breakfast</option>
+        <option>Meetings</option>
+        <option>Lunch</option>
+        <option>Quick nap</option>
+        <option>Go to library</option>
+        <option>Dinner</option>
+        <option>Go to sleep</option>
+    </select>
+    <br>
+
+    <button onclick="addReminder()">Add Reminder</button>
+
+    <div class="list">
+        <h3>Scheduled Reminders:</h3>
+        <ul id="reminderList"></ul>
+    </div>
+</div>
+
+<audio id="alarmSound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+
+<script>
+    let reminders = [];
+
+    function addReminder() {
+        let day = document.getElementById('daySelect').value;
+        let time = document.getElementById('timeSelect').value;
+        let activity = document.getElementById('activitySelect').value;
+
+        if (!time) {
+            alert("Please select a time!");
+            return;
+        }
+
+        reminders.push({ day, time, activity });
+        updateReminderList();
+    }
+
+    function updateReminderList() {
+        let list = document.getElementById('reminderList');
+        list.innerHTML = '';
+        reminders.forEach(r => {
+            let li = document.createElement('li');
+            li.textContent = ${r.day} - ${r.time} - ${r.activity};
+            list.appendChild(li);
+        });
+    }
+
+    function checkReminders() {
+        let now = new Date();
+        let currentDay = now.toLocaleString('en-US', { weekday: 'long' });
+        let currentTime = now.toTimeString().slice(0,5); // "HH:MM"
+
+        reminders.forEach(r => {
+            if (r.day === currentDay && r.time === currentTime) {
+                document.getElementById('alarmSound').play();
+                alert(Reminder : $ {r.activity});
+            }
+        });
+    }
+
+    // Check every second
+    setInterval(checkReminders, 1000);
+</script>
+
+</body>
+</html>
